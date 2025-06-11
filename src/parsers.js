@@ -1,25 +1,27 @@
 import fs from 'fs'
 import path from 'path'
+import yaml from 'js-yaml'
 
-// Получаем расширение файла (json, yaml и т.д.)
 const getFormat = (filepath) => path.extname(filepath).slice(1)
 
-// Чтение файла по абсолютному пути
 const readFile = (filepath) => {
-  const fullPath = path.resolve(process.cwd(), filepath) // Работает и с относительными, и с абсолютными путями
+  const fullPath = path.resolve(process.cwd(), filepath)
   return fs.readFileSync(fullPath, 'utf-8')
 }
 
-// Основная функция парсинга
 const parse = (filepath) => {
   const format = getFormat(filepath)
   const content = readFile(filepath)
 
-  if (format === 'json') {
-    return JSON.parse(content)
+  switch (format) {
+    case 'json':
+      return JSON.parse(content)
+    case 'yml':
+    case 'yaml':
+      return yaml.load(content) // Возвращает JS-объект
+    default:
+      throw new Error(`Unsupported file format: ${format}`)
   }
-
-  throw new Error(`Unsupported file format: ${format}`)
 }
 
 export default parse

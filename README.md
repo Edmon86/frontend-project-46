@@ -3,3 +3,5 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=edmon86_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=edmon86_frontend-project-46)
 ### Сравнение плоских файлов (JSON)
 [Смотреть запись на asciinema](https://asciinema.org/a/PaTeM8EFUfvctlM1mIPwG0EfS)
+### Сравнение плоских файлов (yaml)
+[Смотреть запись на asciinema](https://asciinema.org/a/vjM6KDGpNaxQfTkABPqUxK2BZ)

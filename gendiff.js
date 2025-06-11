@@ -1,26 +1,25 @@
-#!/usr/bin/env node
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
+import genDiff from './src/genDiff.js';
 
-import { Command } from 'commander'
-import parse from './src/parsers.js'
-import genDiff from './src/genDiff.js'
+const parse = (content, ext) => {
+  if (ext === 'json') return JSON.parse(content);
+  if (ext === 'yml' || ext === 'yaml') return yaml.load(content);
+  throw new Error(`Unsupported format: ${ext}`);
+};
 
-const program = new Command()
+const gendiff = (filepath1, filepath2) => {
+  const readFile = (filepath) => {
+    const ext = path.extname(filepath).slice(1);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    return parse(content, ext);
+  };
 
-program
-  .version('0.0.1')
-  .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format [type]', 'output format')
-  .arguments('<filepath1> <filepath2>')
-  .action((filepath1, filepath2) => {
-    const data1 = parse(filepath1)
-    const data2 = parse(filepath2)
+  const data1 = readFile(filepath1);
+  const data2 = readFile(filepath2);
 
-    const diff = genDiff(data1, data2)
-    console.log(diff)
+  return genDiff(data1, data2);
+};
 
-    // console.log('File 1 parsed:\n', JSON.stringify(data1, null, 2));
-    // console.log('File 2 parsed:\n', JSON.stringify(data2, null, 2));
-
-  })
-
-program.parse(process.argv)
+export default gendiff;

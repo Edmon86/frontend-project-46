@@ -6,5 +6,5 @@
 ### Сравнение плоских файлов (yaml)
 [Смотреть запись на asciinema](https://asciinema.org/a/vjM6KDGpNaxQfTkABPqUxK2BZ)
 ### Рекурсивное сравнение
-[Смотреть запись на asciinema][![asciicast](https://asciinema.org/a/WI47XiVWfz4ECMnktHUrxajdG)
+[Смотреть запись на asciinema](https://asciinema.org/a/WI47XiVWfz4ECMnktHUrxajdG)
 

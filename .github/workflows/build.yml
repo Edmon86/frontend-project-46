@@ -26,7 +26,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=Edmon86_frontend-project-46
-	    -Dsonar.organization=edmon86
+            -Dsonar.organization=edmon86
             -Dsonar.sources=src
             -Dsonar.tests=__tests__
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info

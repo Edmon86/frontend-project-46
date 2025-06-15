@@ -1,4 +1,4 @@
-import formatStylish from '../formatters/stylish.js';
+import formatStylish from '../formatters/stylish.js'
 
 describe('formatStylish', () => {
   const ast = [
@@ -18,7 +18,7 @@ describe('formatStylish', () => {
         { type: 'added', key: 'innerKey', value: 'deepValue' },
       ],
     },
-  ];
+  ]
 
   const expected = `{
   + addedKey: newValue
@@ -29,13 +29,10 @@ describe('formatStylish', () => {
     nestedKey: {
       + innerKey: deepValue
     }
-}`;
+}`
 
   test('корректно форматирует дерево изменений в stylish-формате', () => {
-    const result = formatStylish(ast);
-    expect(result).toBe(expected);
-  });
-});
-
-
-
+    const result = formatStylish(ast)
+    expect(result).toBe(expected)
+  })
+})

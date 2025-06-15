@@ -22,14 +22,13 @@ jobs:
         run: npm test -- --coverage
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v2
         with:
           args: >
-            -Dsonar.projectKey=edmon86_frontend-project-46
-            -Dsonar.organization=edmon86
+            -Dsonar.projectKey=Edmon86_frontend-project-46
+	    -Dsonar.organization=edmon86
             -Dsonar.sources=src
+            -Dsonar.tests=__tests__
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}  

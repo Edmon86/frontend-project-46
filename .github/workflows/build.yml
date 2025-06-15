@@ -25,10 +25,9 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v2
         with:
           args: >
-            -Dsonar.projectKey=Edmon86_frontend-project-46
+            -Dsonar.projectKey=edmon86_frontend-project-46
             -Dsonar.organization=edmon86
             -Dsonar.sources=src
-            -Dsonar.tests=__tests__
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  

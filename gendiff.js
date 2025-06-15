@@ -1,25 +1,26 @@
 import fs from 'fs'
 import path from 'path'
-import yaml from 'js-yaml'
-import genDiff from './src/genDiff.js'
+import parse from './src/parsers.js'
+import buildAst from './src/buildAst.js'
+import formatStylish from './formatters/stylish.js'
 
-const parse = (content, ext) => {
-  if (ext === 'json') return JSON.parse(content)
-  if (ext === 'yml' || ext === 'yaml') return yaml.load(content)
-  throw new Error(`Unsupported format: ${ext}`)
+const getData = (filepath) => {
+  const absolutePath = path.resolve(process.cwd(), filepath)
+  const content = fs.readFileSync(absolutePath, 'utf-8')
+  const ext = path.extname(filepath).slice(1)
+  return parse(content, ext)
 }
 
-const gendiff = (filepath1, filepath2) => {
-  const readFile = (filepath) => {
-    const ext = path.extname(filepath).slice(1)
-    const content = fs.readFileSync(filepath, 'utf-8')
-    return parse(content, ext)
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
+  const data1 = getData(filepath1)
+  const data2 = getData(filepath2)
+  const ast = buildAst(data1, data2)
+
+  if (format === 'stylish') {
+    return formatStylish(ast)
   }
 
-  const data1 = readFile(filepath1)
-  const data2 = readFile(filepath2)
-
-  return genDiff(data1, data2)
+  throw new Error(`Unknown format: ${format}`)
 }
 
 export default gendiff

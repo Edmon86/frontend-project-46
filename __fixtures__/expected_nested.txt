@@ -1,4 +1,5 @@
-common: {
+{
+    common: {
       + follow: false
         setting1: Value 1
       - setting2: 200
@@ -10,7 +11,7 @@ common: {
         }
         setting6: {
             doge: {
-              - wow:
+              - wow: 
               + wow: so much
             }
             key: value
@@ -40,3 +41,4 @@ common: {
         }
         fee: 100500
     }
+}

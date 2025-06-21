@@ -20,16 +20,12 @@ const genDiff = (data1, data2) => {
     }
 
     if (!_.isEqual(data1[key], data2[key])) {
-      return [
-        `  - ${key}: ${formatValue(data1[key])}`,
-        `  + ${key}: ${formatValue(data2[key])}`,
-      ]
+      return `  - ${key}: ${formatValue(data1[key])}\n  + ${key}: ${formatValue(data2[key])}`
     }
 
     return `    ${key}: ${formatValue(data1[key])}`
   })
 
-  return `{\n${lines.flat().join('\n')}\n}`
+  return `{\n${lines.join('\n')}\n}`
 }
-
 export default genDiff

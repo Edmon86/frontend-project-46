@@ -1,3 +1,3 @@
-import gendiff from '../gendiff.js';
+import genDiff from '../gendiff.js';
 
-export default gendiff;
+export default genDiff;

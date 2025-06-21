@@ -18,7 +18,6 @@ const stringify = (value, depth) => {
 const formatStylish = (tree, depth = 1) => {
   const lines = tree.map((node) => {
     const indent = getIndent(depth)
-    const bracketIndent = getBracketIndent(depth)
 
     switch (node.type) {
       case 'added':

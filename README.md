@@ -10,3 +10,5 @@
 [Смотреть запись на asciinema](https://asciinema.org/a/WI47XiVWfz4ECMnktHUrxajdG)
 ### Плоский формат
 [Смотреть запись на asciinema](https://asciinema.org/a/L2V5mbsf6vc1cNQ7leutg17f4)
+### Вывод в json
+[Смотреть запись на asciinema](https://asciinema.org/a/7vnXic2XCiMaSPbTWGxkvhClO)

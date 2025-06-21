@@ -3,7 +3,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=edmon86_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=edmon86_frontend-project-46)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=edmon86_frontend-project-46&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=edmon86_frontend-project-46)
 ### Сравнение плоских файлов (JSON)
-[Смотреть запись на asciinema](https://asciinema.org/a/PaTeM8EFUfvctlM1mIPwG0EfS)
+[Смотреть запись на asciinema](https://asciinema.org/a/9u9VhvwuXnrj1MHZdcZZS9KrV)
 ### Сравнение плоских файлов (yaml)
 [Смотреть запись на asciinema](https://asciinema.org/a/vjM6KDGpNaxQfTkABPqUxK2BZ)
 ### Рекурсивное сравнение

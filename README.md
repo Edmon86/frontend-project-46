@@ -12,3 +12,27 @@
 [Смотреть запись на asciinema](https://asciinema.org/a/L2V5mbsf6vc1cNQ7leutg17f4)
 ### Вывод в json
 [Смотреть запись на asciinema](https://asciinema.org/a/7vnXic2XCiMaSPbTWGxkvhClO)
+
+# Вычислитель отличий
+
+**Вычислитель отличий** — консольная утилита, определяющая различия между двумя файлами. Поддерживает форматы: **JSON**, **YAML**, а также вложенные структуры. Результат может быть выведен в нескольких форматах: `stylish`, `plain`, `json`.
+
+## Минимальные требования
+
+- Node.js версии 20.x или выше 
+- NPM
+
+## Установка
+
+ ```bash
+git clone https://github.com/Edmon86/frontend-project-46.git
+cd frontend-project-46
+npm install
+
+## Проверка качества кода
+
+npx eslint .
+
+## Запуск тестов
+
+npm test

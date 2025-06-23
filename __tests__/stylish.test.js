@@ -35,4 +35,9 @@ describe('formatStylish', () => {
     const result = formatStylish(ast)
     expect(result).toBe(expected)
   })
+
+  test('бросает ошибку при неизвестном типе узла', () => {
+    const invalidAst = [{ type: 'invalid_type', key: 'key', value: 'value' }]
+    expect(() => formatStylish(invalidAst)).toThrow('Unknown node type: invalid_type')
+  })
 })

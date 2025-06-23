@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import parse from './src/parsers.js'
-import buildAst from './src/buildAst.js'
+import parse from './parsers.js'
+import buildAst from './buildAst.js'
 import format from './formatters/index.js' // используем универсальный форматер
 
 const getData = (filepath) => {

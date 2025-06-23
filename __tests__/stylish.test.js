@@ -1,4 +1,4 @@
-import formatStylish from '../formatters/stylish.js'
+import formatStylish from '../src/formatters/stylish.js'
 
 describe('formatStylish', () => {
   const ast = [

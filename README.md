@@ -27,4 +27,4 @@
  ```bash
 git clone https://github.com/Edmon86/frontend-project-46.git
 cd frontend-project-46
-npm install
+make install
